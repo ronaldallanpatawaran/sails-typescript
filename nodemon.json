@@ -1,0 +1,5 @@
+{
+  "watch": ["./"],
+  "ignore": ["assets", "swagger.json"],
+  "exec": "ts-node ./app.js"
+}
