@@ -1,4 +1,4 @@
-const sails = require('sails')
+var sails = require('sails');
 require('ts-node/register');
 
 // Before running any tests...

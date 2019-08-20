@@ -1,24 +1,23 @@
 // api/controllers/AuthenticationController.ts
-declare var sails: any;
+const sails = require('sails');
 import * as jwt from "jsonwebtoken";
 
 export function login(req:any, res:any, next: Function) {
-	try {
-    const userName = req.body.userName as string
-    const password = req.body.password as string
-    const token = jwt.sign({ userName }, 'shhhhh') as string;
-		return res.bad({ message: 'Successful',  data: { token }});
-	} catch (err) {
-		return res.badRequest({ message: err.message })
-	}
+  const userName = req.body.userName as string
+  const passWord = req.body.passWord as string
+  if (!userName || !passWord) {
+    return res.badRequest({ message: 'userName and passWord required' })
+  }
+  const token = jwt.sign({ userName }, sails.config.security.secret) as string;
+	return res.ok({ message: 'Successful',  data: { token }});
 }
 
 export function validate(req: any, res: any, nex: Function) {
-  const token = req.body.token as string
   try {
-    var decoded = jwt.verify(token, 'shhhhh') as string;
+    const token = req.headers.authorization.trim().split(' ').pop() as string
+    const decoded = jwt.verify(token, sails.config.security.secret) as string;
     return res.ok({ message: 'Successful', data: { decoded } })
-  } catch(err) {
-    return res.badRequest({ message: err.message })
+  } catch (err) {
+    return res.badRequest({ message: 'Invalid token' })
   }
 }
