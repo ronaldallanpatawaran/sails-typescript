@@ -20,8 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
   'GET /swagger': { view: 'pages/swagger' },
 
-  'POST /authentication-service/' : { controller: 'Authentication', action: 'login' },
-  'GET /authentication-service/' : { controller: 'Authentication', action: 'validate' }
+  'GET /test/v1/test': { controller: 'Index', action: 'index' }
 
 
   /***************************************************************************

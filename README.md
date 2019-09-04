@@ -1,4 +1,4 @@
-# authentication-service
+# sails-typescript
 
 a [Sails v1](https://sailsjs.com) application
 
