@@ -20,7 +20,8 @@ module.exports.routes = {
   ***************************************************************************/
   'GET /swagger': { view: 'pages/swagger' },
 
-  'GET /test/v1/test': { controller: 'Index', action: 'index' }
+  'GET /SampleController/v1': { controller: 'Sample', action: 'index' },
+  'POST /SampleController/v1': { controller: 'Sample', action: 'add' }
 
 
   /***************************************************************************

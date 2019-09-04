@@ -89,6 +89,7 @@ config/local.js
 
 node_modules
 .nyc_output
+**/logs/*.log
 
 ################################################
 #

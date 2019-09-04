@@ -1,5 +1,0 @@
-{
-	"watch": "./",
-	"ignore": ["assets", "swagger.json"],
-	"exec": "node"
-}
