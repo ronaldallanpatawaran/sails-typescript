@@ -1,6 +1,4 @@
-declare const sails: any;
-declare const _: any;
-export function badRequest(optionalData) {
+module.exports = function badRequest(optionalData) {
 
   // Get access to `req` and `res`
   var req = this.req;
